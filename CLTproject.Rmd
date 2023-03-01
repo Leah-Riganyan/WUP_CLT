@@ -155,8 +155,8 @@ p + ggtitle("n = 25") +
 print(paste('mean = ', mean(my1000$k25),' sd = ',sd(my1000$k25)))
 
 ```
-
-
+   
+With 25 samples, again it increasingly looks unimodal compared to 16 and 9.
 
 
 
