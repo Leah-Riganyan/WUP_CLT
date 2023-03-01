@@ -158,5 +158,28 @@ print(paste('mean = ', mean(my1000$k25),' sd = ',sd(my1000$k25)))
    
 With 25 samples, again it increasingly looks unimodal compared to 16 and 9.
 
+```{r}
+numb = 36
+Hdata = Homers_data[sample(1:1000,size=numb*1000, replace=T),"kkardashtemp"]
+mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
+x.avg <- apply(mdata,1,mean)
+my1000$k36 = x.avg
+
+
+p <- ggplot(my1000, aes(x=k36),col=sex) + 
+  geom_density() +
+
+# Add mean line
+ geom_vline(aes(xintercept=mean(k36)),
+            color="blue", linetype="dashed", size=1)
+p + ggtitle("n =36")+
+  xlab("temperature") + ylab(" density")
+
+print(paste('mean = ', mean(my1000$k36),' sd = ',sd(my1000$k36)))
+```
+   
+We showed the Central Line Theorem through a series of plots that, as the sample got bigger, increasibly looked unimodal.
+
+
 
 
